@@ -4,6 +4,7 @@ This program was designed specifically for Pacbio post-processed reads for use i
 Updates to v2:
 
 Fully automated.
+File names have changed with updated pacbio software.
 Deals with "fasta" formated files from NCBI's Entrez edirect utilities. 
 *Please note, this format does not contain "GI" IDs, but rather "NR" IDs. As far as I am aware, and after a few hours of research, there is no way to change this format. Please see "strep_sequence.fasta" file retrieved from ncbi using esearch for specific formatting.
 
