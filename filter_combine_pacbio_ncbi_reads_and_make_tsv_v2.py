@@ -73,11 +73,11 @@ def combine_pacbio_w_ncbi(new_records, ncbi_records):
 
         files_to_combine = ["ncbi_seqs_no_blanks.fasta", new_records]
         #now combine the files in a new file containing all of the filtered records
-        with open("all_filtered_seqs.fasta", "w") as all_record_file:
-            for file in files_to_combine:
-                with open(file) as in_file:
-                    for line in in_file:
-                        all_record_file.write(line)
+    with open("all_filtered_seqs.fasta", "w") as all_record_file:
+        for file in files_to_combine:
+            with open(file) as in_file:
+                for line in in_file:
+                    all_record_file.write(line)
 
 
 
