@@ -19,3 +19,5 @@ Output:
 "all_reads_info.tsv = contains all of the reads information. This is formatted to be used as annotations for a tree build with the ggtree package in Rstudio.
 
 Please see "filter_combine_reads" for additional information.
+
+Please note: There is a size parameter in the pacbio headers which are filtered on. You must edit this number depending on your desired filtering. By default, this script filters out any reads if they appear five times or less. This number varies and impacts the complexity of multiple sequence alignment (follows) and readability of phylogenetic tree (e.g. there are too many reads to fit in an image). Please contact me if this is confusing or you cannot find where to edit this integer within the script.
