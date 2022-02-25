@@ -41,7 +41,7 @@ def get_read_size(handles_list):
         handle_id_items = element.split(sep=';')
         #depending on the number of elements in the handle, this index must be changed
         #"size" must be present on pacbio headers post CCS/Demultiplexing
-        if handle_id_items[3] not in ["size=1", "size=2", "size=3", "size=4", "size=5"]:
+        if handle_id_items[3] in ["size=1"]:
             filtered_reads.append(element)
         
 
