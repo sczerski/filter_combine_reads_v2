@@ -41,8 +41,12 @@ def get_read_size(handles_list):
         handle_id_items = element.split(sep=';')
         #depending on the number of elements in the handle, this index must be changed
         #"size" must be present on pacbio headers post CCS/Demultiplexing
-        if handle_id_items[3] != "size=1":
+        #filtered any reads with size <=5
+        handle_id_item_size = handle_id_items[3].split(sep="=")
+        #handle_id_item_size[1] is the number associated with size. Now you can simply use an inequality to better handle size filtering
+        if int(handle_id_item_size[1]) > 5:
             filtered_reads.append(element)
+            
     #if this creates an empty list, you need to include singleton reads or else no reads will be wrote to the file at all
     if len(filtered_reads) == 0:
         for element in handles_list:
