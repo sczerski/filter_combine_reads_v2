@@ -43,6 +43,13 @@ def get_read_size(handles_list):
         #"size" must be present on pacbio headers post CCS/Demultiplexing
         if handle_id_items[3] != "size=1":
             filtered_reads.append(element)
+    #if this creates an empty list, you need to include singleton reads or else no reads will be wrote to the file at all
+    if len(filtered_reads) == 0:
+        for element in handles_list:
+            handle_id_items = element.split(sep=';')
+            #serves as a check that on "size=1" exists in handles
+            if handle_id_items[3] not in ["size=2", "size=3", "size=4", "size=5"]:
+                filtered_reads.append(element)
         
 
     return filtered_reads
